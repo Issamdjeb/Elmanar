@@ -1,0 +1,16 @@
+{
+  "name": "elmanar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A thoughtful classroom quiz and learning snapshot experience.",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "dev": "node --watch --env-file-if-exists=.env server.mjs",
+    "test": "node --test",
+    "check": "node --check app.js && node --check server.mjs && node --check test/accounts.test.mjs"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}

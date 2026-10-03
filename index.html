@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Elmanar turns lessons into thoughtful quizzes, useful feedback, and clearer conversations between school and home."
+    />
+    <meta name="theme-color" content="#f7f8fb" />
+    <title>Elmanar — Learning that stays with you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  </head>
+  <body>
+    <main class="welcome-shell" id="welcome-shell" hidden>
+      <header class="welcome-nav">
+        <a class="welcome-brand" href="/" aria-label="Elmanar home"><img src="/elmanar-logo.jpg" alt="" /><span>elmanar</span></a>
+        <div class="welcome-nav-right">
+          <span class="welcome-nav-caption" id="welcome-nav-caption">A brighter way to learn</span>
+          <div class="lang-switch" role="group" aria-label="Language selection">
+            <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+          </div>
+          <button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Switch theme"></button>
+          <button class="welcome-login" type="button" data-action="choose-login"><span class="welcome-login-label">Sign in</span> <span class="arrow-icon">↗</span></button>
+        </div>
+      </header>
+      <div class="welcome-content" id="welcome-content"></div>
+      <footer class="welcome-footer"><span class="welcome-footer-copy">© <span id="year-label"></span> Elmanar</span><span class="welcome-footer-motto">Learning makes a brighter future.</span><button class="welcome-theme-link" type="button" data-action="toggle-theme">Switch appearance</button></footer>
+    </main>
+    <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="Elmanar home"><img class="sidebar-logo" src="/elmanar-logo.jpg" alt="" /><span class="brand-name">elmanar</span></a>
+        <div class="school-switcher" id="school-switcher">
+          <span class="school-avatar">E</span>
+          <span class="school-label"><strong>Elmanar Academy</strong><small>Learning space</small></span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </div>
+        <p class="nav-caption" id="nav-caption">YOUR PORTAL</p>
+        <nav class="primary-nav" id="primary-nav"></nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note"><span class="note-sparkle" aria-hidden="true">✳</span><p id="sidebar-note-text">Small steps add up to <strong>big understanding.</strong></p></div>
+          <div class="profile">
+            <span class="profile-avatar" id="profile-avatar"></span>
+            <span class="profile-info"><strong id="profile-name"></strong><small id="profile-role"></small></span>
+            <button class="more-button" type="button" data-action="logout" aria-label="Sign out" title="Sign out">↗</button>
+          </div>
+        </div>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumbs"><a href="/" data-action="go-home">Elmanar</a><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current"></strong></div>
+          <div class="topbar-right">
+            <div class="lang-switch" role="group" aria-label="Language selection">
+              <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+              <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+              <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            </div>
+            <span class="today-label" id="today-label"></span>
+            <span class="connection-status" id="connection-status"><span></span> Checking AI</span>
+            <button class="theme-toggle dashboard-theme-toggle" type="button" data-action="toggle-theme" aria-label="Switch theme"></button>
+            <span class="avatar-small" id="topbar-avatar" aria-hidden="true"></span>
+            <button class="topbar-signout" type="button" data-action="logout" aria-label="Sign out of Elmanar">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3m9-8h6a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-6"/></svg>
+              <span id="signout-label">Sign out</span>
+            </button>
+          </div>
+        </header>
+        <div class="page-content" id="app" aria-live="polite"></div>
+        <footer class="site-footer"><span id="site-footer-text">Made for the moments when learning <span>clicks.</span></span><span class="footer-sparkle">✳</span></footer>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="assertive" aria-atomic="true"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
